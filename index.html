@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+<div id="gotop" class="img"></div>
+<p id="top_line"></p>
+<div id="header">
+	<p id="header_line"></p>
+    <div id="header_c">
+    	<div id="logo"><h1 class="logo"><a href="index.html">好吃蔥油餅</a></h1></div>
+    </div>
+</div>
+<form name="skeyForm" id="skeyForm" method="GET" onSubmit="return false;" >
+	<input name="skey" type="text" id="skey" style="DISPLAY: none" value=""/>
+</form>
+</div>
+<p id="msg_bg_a_line"></p>
+<script>
+function slideLine(box,stf,delay,speed,h)
+{
+  var slideBox = document.getElementById(box);
+  var delay = delay||1000,speed = speed||20,h = h||20;
+  var tid = null,pause = false;
+  var s = function(){tid=setInterval(slide, speed);}
+  var slide = function(){
+    if(pause) return;
+    slideBox.scrollTop += 1;
+    if(slideBox.scrollTop%h == 0){
+      clearInterval(tid);
+      slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
+      slideBox.scrollTop = 0;
+      setTimeout(s, delay);
+    }
+  }
+  slideBox.onmouseover=function(){pause=true;}
+  slideBox.onmouseout=function(){pause=false;}
+  setTimeout(s, delay);
+}
+slideLine('ann_box','div',2000,25,30);
+</script>
+<div id="line_bg"><p id="line_f">產品介紹</p><p id="line_path"><a href="index.html">首頁</a>　/　<a href="products.html">產品介紹</a>　/　內文</p></div>
+<div id="content">
+
+    <div id="pr_content">
+		<div id="pr_category">
+        	<img src="images/symbol/icon_01.gif" align="absmiddle" /> <b style="color:#663300;">好吃蔥餅</b>
+        	<p id="pr_category_c">產品類別：<select class="category f15_15a" onchange="if($(this).val()!=''){location.href='products.html?cID='+$(this).val()}else{location.href='products.html'}">
+              <option value="">全部</option><option selected value="1">好吃蔥餅</option>            </select></p>
+        </div>
+        <div id="pr_cc">
+        	<div id="pr_info">
+				<p id="pr_info_p"><i></i><img src="001.jpg" height="300" width="400"/>
+                <div id="pr_info_c">
+                	<p id="pr_title">好吃蔥餅</p>
+                    <ul>
+                        <li style="color:#c74600; font-size:22px;">NTD : 200</li>
+                        <li>購買數量　<input name="gAmount" id="gAmount" maxlength="3" value="1" type="text" class="box f15_15a" style="width:80px;"/></li>
+																		<li><span style="color: #ff0000; font-family: 標楷體,DFKai-sb; font-size: 14pt;"><span style="color: #ff0000; font-family: 標楷體,DFKai-sb;"><span style="color: #000000;">一包10片裝(每片170g正負5%)</span></span><br />本公司<span style="font-family: 標楷體;">產品完全純手工製成</span>(購買猪油板自炸成油)安全衛生</span></li>
+						                    
+</body>
+</html>
